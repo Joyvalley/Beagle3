@@ -4,7 +4,7 @@
 
 ### This little script can be executed with sh beagle3.sh
 ### I included some sample data so that you can try it before you enter the real data
-### If you have a large 
+### Large vcf files have to be seperated by chromosomes
 
 
 ### Beagle 3 requires a specifc data format for execution the conversion from vcf to bgl works  as follows:
