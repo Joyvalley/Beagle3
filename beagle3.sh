@@ -1,8 +1,15 @@
 #!/bin/bash
 
 
-### Beagle 3 requires a specifc data format conversion from vcf as follows
-### test.vcf is the input vcf. my_beagle is the prefix of the ouput files 
+
+### This little script can be executed with sh beagle3.sh
+### I included some sample data so that you can try it before you enter the real data
+### If you have a large 
+
+
+### Beagle 3 requires a specifc data format for execution the conversion from vcf to bgl works  as follows:
+
+### test.vcf is the input vcf file  my_beagle is the prefix of the ouput files 
 
 cat test.vcf  | java -jar tools/vcf2beagle.jar NA foo
 
@@ -12,10 +19,9 @@ gzip -d foo.bgl.gz
 
 ##impute missing data again for larger data the memory has to be increased to more than 8GB
 
-java -Xmx8G -jar tool/beagle.jar unphased=foo.bgl  missing=NA markers=foo.markers  out=foobar 
+java -Xmx8G -jar tools/beagle.jar unphased=foo.bgl  missing=NA markers=foo.markers  out=foobar 
 
-gzip -d foo.unphased*
-
+gzip -d *.gz
 
 cat foobar.foo.bgl.gprobs | java -jar tools/gprobs2beagle.jar 0.001 NA > b3.vcf
 

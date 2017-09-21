@@ -1,0 +1,18 @@
+#!/bin/bash
+
+##cd ~/slurm
+
+#cat ~/slurm/Chr1_no_beagle.recode.vcf  | java -jar ~/Software/vcf2beagle/vcf2beagle.jar NA 1M_no
+
+#gzip - 1M_no.bgl.gz
+
+
+##java -Xmx5000000M -jar ~/Software/Beagle3/beagle.jar phased=~/slurm/comparebeagle/input/121m.bgl  missing=NA out=1M_b3.phased
+
+
+java -Xmx5000000M -jar ~/Software/Beagle3/beagle.jar unphased=~/slurm/comparebeagle/input/121m.bgl  missing=NA out=1M_b3.unphased
+
+
+
+
+#java -Xmx50G -jar ~/Software/Beagle/beagle.21Jan17.6cc.jar gt=121m.recode.vcf out=121mb

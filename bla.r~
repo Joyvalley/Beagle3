@@ -1,0 +1,13 @@
+
+
+
+llibrary("dtplyr")
+my_bla <- read.csv(".file1",sep = "")
+dim(my_bla)
+my_bla <- my_bla[,4:8]
+users <- unique(my_bla$USER)
+nodes <- unique(my_bla$NODELIST.REASON.)
+
+rbind(head(my_bla),tail(my_bla))
+
+getwd()
